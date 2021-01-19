@@ -1,0 +1,12 @@
+---
+# tasks file for ubuntu_hwe
+- when: ansible_distribution in ['Ubuntu']
+  block:
+    - name: "Install Ubuntu HWE Package"
+      apt:
+        install_recommends: true
+        name: "{{ ubuntu_hwe_packages }}"
+        state: "{{ ubuntu_hwe_package_state }}"
+        update_cache: "{{ ubuntu_hwe_apt_update }}"
+      notify: 'hwe reboot'
+  become: true

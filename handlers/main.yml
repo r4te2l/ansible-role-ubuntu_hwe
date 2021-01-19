@@ -1,0 +1,7 @@
+---
+# handlers file for ubuntu_hwe
+- name: 'hwe reboot'
+  reboot:
+    msg: "Rebooting for HWE Kernel Update"
+  listen: 'hwe reboot'
+  become: true

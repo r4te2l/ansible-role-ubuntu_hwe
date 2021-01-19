@@ -1,0 +1,6 @@
+---
+# defaults file for ubuntu_hwe
+ubuntu_hwe_packages:
+  - "linux-generic-hwe-{{ ansible_distribution_version }}"
+ubuntu_hwe_package_state: 'latest'
+ubuntu_hwe_apt_update: true
